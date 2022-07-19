@@ -550,11 +550,6 @@ body {
 }
 
 @media (max-width: 990px) {
-  svg {
-    bottom: unset;
-    top: 0;
-  }
-
   .content {
     width: auto;
     height: auto;
