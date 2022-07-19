@@ -1,3 +1,5 @@
+// валидация формы и анимирование кнопки
+
 const validation = new JustValidate('#form', {
   errorLabelStyle: {
     position: "absolute",
@@ -97,7 +99,9 @@ validation
     const input = inputs[i];
     if (!input.value) {
       input.style.borderColor = "#FF2222";
+      document.querySelector("button").classList.toggle('animate-btn')
     } else {
+      document.querySelector("button").classList.remove('animate-btn')
       document.querySelector('.sign-block-2').classList.add('delete')
       document.querySelector('.sign-block-hide').classList.add('open')
     }

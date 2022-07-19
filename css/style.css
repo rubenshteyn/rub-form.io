@@ -513,11 +513,48 @@ body {
   color: #5A61ED;
 }
 
+.block {
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+.block {
+  top: -100rem;
+}
+
+.animate-btn {
+  animation: 1.2s ease-in-out 0s normal none running cycle;
+}
+
+@-webkit-keyframes cycle {
+  35% {-webkit-transform: rotate(0) translate(0, 0);transform: rotate(0) translate(0, 0);}
+  40% {-webkit-transform: rotate(5deg) translate(0, -2px);transform: rotate(5deg) translate(0, -2px);}
+  45% {-webkit-transform: rotate(-3deg) translate(0, -2px);transform: rotate(-3deg) translate(0, -2px);}
+  50% {-webkit-transform: rotate(5deg) translate(0, -2px);transform: rotate(5deg) translate(0, -2px);}
+  55% {-webkit-transform: rotate(-3deg) translate(0, -2px);transform: rotate(-3deg) translate(0, -2px);}
+  60% {-webkit-transform: rotate(5deg) translate(0, -2px);transform: rotate(5deg) translate(0, -2px);}
+  65% {-webkit-transform: rotate(-3deg) translate(0, -2px);transform: rotate(-3deg) translate(0, -2px);}
+  70% {-webkit-transform: rotate(0) translate(0, 0);transform: rotate(0) translate(0, 0);}
+}
+@keyframes cycle {
+  35% {-webkit-transform: rotate(0) translate(0, 0);transform: rotate(0) translate(0, 0);}
+  40% {-webkit-transform: rotate(5deg) translate(0, -2px);transform: rotate(5deg) translate(0, -2px);}
+  45% {-webkit-transform: rotate(-3deg) translate(0, -2px);transform: rotate(-3deg) translate(0, -2px);}
+  50% {-webkit-transform: rotate(5deg) translate(0, -2px);transform: rotate(5deg) translate(0, -2px);}
+  55% {-webkit-transform: rotate(-3deg) translate(0, -2px);transform: rotate(-3deg) translate(0, -2px);}
+  60% {-webkit-transform: rotate(5deg) translate(0, -2px);transform: rotate(5deg) translate(0, -2px);}
+  65% {-webkit-transform: rotate(-3deg) translate(0, -2px);transform: rotate(-3deg) translate(0, -2px);}
+  70% {-webkit-transform: rotate(0) translate(0, 0);transform: rotate(0) translate(0, 0);}
+}
+
 @media (max-width: 990px) {
   svg {
     bottom: unset;
     top: 0;
   }
+
   .content {
     width: auto;
     height: auto;
