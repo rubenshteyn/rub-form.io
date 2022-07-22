@@ -1,5 +1,3 @@
-// валидация формы и анимирование кнопки
-
 const validation = new JustValidate('#form', {
   errorLabelStyle: {
     position: "absolute",
@@ -93,18 +91,34 @@ validation
     }
   ])
 
-  const inputs = document.querySelectorAll('.input-field')
-  document.querySelector('#form').addEventListener("submit", function (e) {
-  for (let i = 0; i < inputs.length; i++) {
-    const input = inputs[i];
-    if (!input.value) {
-      input.style.borderColor = "#FF2222";
-      document.querySelector("button").classList.toggle('animate-btn')
-    } else {
-      document.querySelector("button").classList.remove('animate-btn')
-      document.querySelector('.sign-block-2').classList.add('delete')
-      document.querySelector('.sign-block-hide').classList.add('open')
-    }
+const inputs = document.querySelectorAll('.input-field')
+document.querySelector('#form').addEventListener("submit", function (e) {
+  const name = document.getElementById('name')
+  const lastName = document.getElementById('last-name')
+  const mail = document.getElementById('mail')
+  const password = document.getElementById('password')
+  const confirmPassword = document.getElementById('confirm-password')
+  function borderValidate(input) {
+    input.style.borderColor = "#FF2222";
+    document.querySelector('.send-form').classList.toggle('animate-btn')
+  }
+  if(!name.value) {
+    borderValidate(name)
+  }
+  if(!lastName.value) {
+    borderValidate(lastName)
+  }
+  if(!mail.value) {
+    borderValidate(mail)
+  }
+  if(!password.value) {
+    borderValidate(password)
+  }
+  if(!confirmPassword.value) {
+    borderValidate(confirmPassword)
+  } 
+  else {
+    document.querySelector('.sign-block-2').classList.add('delete')
+    document.querySelector('.sign-block-hide').classList.add('open')
   }
 })
-
