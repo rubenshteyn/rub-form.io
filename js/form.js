@@ -98,10 +98,16 @@ document.querySelector('#form').addEventListener("submit", function (e) {
   const mail = document.getElementById('mail')
   const password = document.getElementById('password')
   const confirmPassword = document.getElementById('confirm-password')
+
   function borderValidate(input) {
     input.style.borderColor = "#FF2222";
     document.querySelector('.send-form').classList.toggle('animate-btn')
   }
+  function closeForm() {
+    document.querySelector('.sign-block-2').classList.add('delete')
+    document.querySelector('.sign-block-hide').classList.add('open')
+  }
+
   if(!name.value) {
     borderValidate(name)
   }
@@ -111,14 +117,35 @@ document.querySelector('#form').addEventListener("submit", function (e) {
   if(!mail.value) {
     borderValidate(mail)
   }
-  if(!password.value) {
+  if(password.value.length < 8) {
     borderValidate(password)
   }
-  if(!confirmPassword.value) {
+  if(confirmPassword.value.length < 8) {
     borderValidate(confirmPassword)
-  } 
-  else {
-    document.querySelector('.sign-block-2').classList.add('delete')
-    document.querySelector('.sign-block-hide').classList.add('open')
+  } else {
+    closeForm()
+    sendForm()
   }
+
+  function sendForm() {
+    let dataForm = []
+    for (const input of inputs) {
+      dataForm.push(input.value)
+    }
+
+    const holders = document.querySelectorAll('.holder')
+    for (const holder of holders) {
+      dataForm.push(holder.textContent)
+    }
+    alert(`
+    Your name: ${dataForm[0]}
+    Your last name: ${dataForm[1]}
+    Your mail: ${dataForm[2]}
+    Your password: ${dataForm[3]}
+    Your nationality: ${dataForm[5]}
+    Your date of birth: ${dataForm[6]} ${dataForm[7]} ${dataForm[8]}
+    }
+  `);
+  }
+
 })
